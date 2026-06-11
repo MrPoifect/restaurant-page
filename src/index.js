@@ -8,6 +8,7 @@ const homeBtn = document.getElementById("home");
 const menuBtn = document.getElementById("menu");
 const aboutBtn = document.getElementById("about");
 
+loadHomePage();
 
 function openTargetPage(target) {
     const contentBox = document.getElementById("content");

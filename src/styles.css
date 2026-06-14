@@ -16,11 +16,20 @@ body {
     margin: 0;
     padding: 0;
     font-family: "roboto";
+    background-color: rgb(241, 241, 241);
 }
 
 
 header {
- background-color: rgb(12, 64, 112);
+    background-color: rgb(12, 64, 112);
+    position: sticky;
+    top: 0;
+    border-radius: 0px 0px 12px 12px;
+}
+
+footer {
+    background-color: rgb(12, 64, 112);
+    margin: 0;
 }
 
 #header-content {
@@ -29,14 +38,18 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 25px 30px;
-    max-height: 40px
+    max-height: 40px;
+
 }
 
 #logo {
     font-family: "Norwester";
     font-size: 35px;
     align-content: center;
-    color: rgb(224, 134, 216);
+    background-image: linear-gradient(to bottom right,rgb(224, 134, 216), rgb(211, 216, 143));
+    color: transparent;
+    background-clip: text;
+
 }
 
 #buttons {
@@ -62,12 +75,22 @@ header {
 }
 
 #content {
-    background-color: rgb(241, 241, 241);
+
     font-family: "Norwester";
+    height: 1000px;
 }
 
 input[type="checkbox"], label {
     display: none;
+}
+
+#footer-content {
+    height: 60px;
+}
+
+#footer-content > p {
+    margin: 0;
+    text-align: center;
 }
 
 
@@ -77,6 +100,7 @@ input[type="checkbox"], label {
     input[type="checkbox"]:not(:checked)+#buttons {
     display: none;
     }
+
 
     #buttons{
         display: flex;

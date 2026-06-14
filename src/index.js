@@ -24,6 +24,8 @@ function openTargetPage(target) {
             loadAboutPage();
             break;
     }
+    closeNavBox();
+    window.scrollTo(0, 0);
 
 }
 
@@ -39,5 +41,33 @@ homeBtn.addEventListener("click", (e)=> {
 
 menuBtn.addEventListener("click", (e)=> {
     e.preventDefault();
-    openTargetPage(menu)
+    openTargetPage(menu);
 });
+
+
+
+//Close nav box logic
+const checkBox = document.getElementById("dropdown");
+//document.addEventListener("mousedown", closeNavBox);
+document.getElementById("nav-icon").addEventListener("click", toggleNavBox);
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeNavBox();
+    }
+})
+
+checkBox.addEventListener("change", toggleNavBox);
+
+
+function closeNavBox() {
+    checkBox.checked = false;
+}
+
+function toggleNavBox() {
+    if (checkBox.checked) {
+        checkBox.checked = false;
+    } else {
+        checkBox.checked = true;
+    }
+
+}

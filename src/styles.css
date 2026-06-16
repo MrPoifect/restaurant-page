@@ -53,7 +53,7 @@ footer {
     font-family: "Norwester";
     font-size: 35px;
     align-content: center;
-    background-image: linear-gradient(to bottom right,rgb(224, 134, 216), rgb(211, 216, 143));
+    background-image: linear-gradient(to bottom right,rgb(224, 134, 216), rgb(247, 230, 195));
     color: transparent;
     background-clip: text;
 
@@ -119,30 +119,43 @@ input[type="checkbox"], label {
 /*Menu Page */
 
 .menu-div {
-    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #D9D9D9
 }
 
 
 .menu-content {
-    background-color: bisque;
+    background-color: #3F4C5C;
     width: 80%;
     border-radius: 16px;
     margin: 60px auto;
-    padding: 30px;
+    padding: 15px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 30px;
+    gap: 16px;
     place-items: center;
 }
 
+h2 {
+    grid-column: 1/-1;
+    border-bottom: 2px solid rgb(224, 134, 216);
+    color: white;
+}
+
+h3 {
+    color: #151515;
+}
+
+
+
 .menu-card {
-    background-color: blueviolet;
+    background-color: #F4E1B9;
     border-radius: 8px;
     padding: 16px;
     display: flex;
-    height: 150px;
     min-width: 325px;
-    max-width: 350px;
+    max-width: 375px;
     gap: 16px;
 }
 
@@ -152,6 +165,8 @@ input[type="checkbox"], label {
     object-fit: cover;
     border-radius: 8px;
     aspect-ratio: 1;
+    border: 4px rgb(224, 134, 216) solid;
+    box-shadow: 5px 5px #e6b650;
 }
 
 .item-info {
@@ -159,27 +174,29 @@ input[type="checkbox"], label {
     flex-direction: column;
 }
 
+.item-info > p {
+    padding-top: 6px;
+    color: #3A322B;
+}
+
 .item-info > span {
     margin-top: auto;
     border-top: 2px dotted black;
     padding-top: 4px;
-    color: pink;
-}
-
-
-@media (max-width: 930px) {
-
-    .menu-content {
-        width:fit-content;
-    }
+    color: rgb(224, 134, 216);
 }
 
 
 
-@media (max-width: 650px) {
+
+@media (max-width: 700px) {
 
     input[type="checkbox"]:not(:checked)+#buttons {
     display: none;
+    }
+
+    .menu-div {
+    grid-template-columns: repeat(auto-fill, minmax(80%, 1fr));
     }
 
 

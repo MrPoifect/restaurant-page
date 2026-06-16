@@ -2,24 +2,46 @@ import burgerImg from "./images/plain-burger.jpg"
 import cheeseBurgerImg from "./images/cheese-burger.jpg"
 import chickenBurgerImg from "./images/chicken-burger.jpg"
 import nuggetsImg from "./images/nuggets.jpg"
+import friesImg from "./images/fries.jpg"
+import hotdogImg from "./images/hotdog.jpg"
+import tunaMeltImg from "./images/tuna-melt.jpg"
 
 export { loadMenuPage }
 
 function loadMenuPage() {
     const menuDiv = document.createElement("div");
-    const menuContent = document.createElement("div");
+    const mainsContent = document.createElement("div");
+    const mainsTitle = document.createElement("h2");
+    const sidesContent = document.createElement("div");
+    const sidesTitle = document.createElement("h2");
 
     document.getElementById("content").appendChild(menuDiv);
-    menuDiv.appendChild(menuContent);
-    menuContent.classList.add("menu-content");
     menuDiv.classList.add("menu-div");
+    menuDiv.append(mainsContent, sidesContent);
 
-    menuContent.appendChild(renderMenuItem(burger));
-    menuContent.appendChild(renderMenuItem(cheeseBurger));
-    menuContent.appendChild(renderMenuItem(chickenBurger));
-    
+    mainsContent.classList.add("mains-content", "menu-content");
+    mainsContent.appendChild(mainsTitle);
+    mainsTitle.textContent = "Mains";
+
+    sidesContent.classList.add("sides-content", "menu-content");
+    sidesContent.appendChild(sidesTitle);
+    sidesTitle.textContent = "Sides";
+
+
+
+    for (let i = 0; i < mainsArray.length; i++) {
+        mainsContent.appendChild(renderMenuItem(mainsArray[i]));
+    }
+
+    for (let i = 0; i < sidesArray.length; i++) {
+        sidesContent.appendChild(renderMenuItem(sidesArray[i]));
+    }
 
 }
+
+
+let mainsArray = []
+let sidesArray = []
 
 function createMenuItem(name, description, price, imageSrc) {
     return {
@@ -30,7 +52,7 @@ function createMenuItem(name, description, price, imageSrc) {
     };
 }
 
-
+//Mains
 
 const burger = createMenuItem(
     "Classic Burger",
@@ -38,6 +60,7 @@ const burger = createMenuItem(
     2.99,
     burgerImg,
 );
+mainsArray.push(burger);
 
 const cheeseBurger = createMenuItem(
     "Cheese Burger",
@@ -45,20 +68,53 @@ const cheeseBurger = createMenuItem(
     3.99,
     cheeseBurgerImg,
 );
+mainsArray.push(cheeseBurger);
 
 const chickenBurger = createMenuItem (
     "Greezy Chicken",
     "A chunky piece of chicken cooked to un-rawness",
     2.99,
     chickenBurgerImg,
-)
+);
+mainsArray.push(chickenBurger);
 
 const nuggets = createMenuItem (
-    "Nuggets (4)",
-    "Four fried nuggets. Warning: may contain chicken",
+    "Nuggets (6)",
+    "Six fried nuggets. Warning: may contain chicken",
     1.49,
     nuggetsImg,
-)
+);
+mainsArray.push(nuggets);
+
+const hotdog = createMenuItem (
+    "Hotdog",
+    "A tube of mystery meat smushed between a bun",
+    2.29,
+    hotdogImg,
+);
+mainsArray.push(hotdog);
+
+const tunaMelt = createMenuItem (
+    "Tuna Melt",
+    "Some cheese, some tuna, ALL style",
+    1.37,
+    tunaMeltImg,
+);
+mainsArray.push(tunaMelt);
+
+
+
+//Sides
+
+const fries = createMenuItem (
+    "Fries",
+    "A pot of potato fries, fried in less than week-old oil",
+    2.49,
+    friesImg,
+);
+sidesArray.push(fries);
+
+
 
 
 

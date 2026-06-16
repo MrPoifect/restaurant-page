@@ -37,7 +37,28 @@ footer {
     padding: 10px;
     margin-top: auto;
     height: 80px;
+    text-align: center;
+    color: rgb(151, 151, 151);
+
 }
+
+#photo-links {
+    padding-top: 8px;
+}
+
+#footer-content > p {
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgb(151, 151, 151);
+}
+
+a {
+    text-decoration: none;
+    color: rgb(151, 151, 151);
+    font-size: 12px;
+    
+}
+
+
 
 #header-content {
     width: 80%;

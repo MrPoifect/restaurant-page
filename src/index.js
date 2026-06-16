@@ -3,6 +3,7 @@ import "./styles.css";
 import { loadHomePage } from "./home.js";
 import { loadMenuPage } from "./menu.js";
 import { loadAboutPage } from "./about.js";
+import { menuButton } from "./home.js"
 
 
 const homeBtn = document.getElementById("home");
@@ -45,6 +46,10 @@ menuBtn.addEventListener("click", (e)=> {
     openTargetPage(menu);
 });
 
+menuButton.addEventListener("click", (e)=> {
+    e.preventDefault();
+    openTargetPage(menu);
+});
 
 
 //Close nav box logic

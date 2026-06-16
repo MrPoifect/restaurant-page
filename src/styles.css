@@ -18,7 +18,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "roboto";
-    background-color: rgb(241, 241, 241);
+    background-color: #151b29;
 
 }
 
@@ -36,7 +36,7 @@ footer {
     z-index: 1;
     padding: 10px;
     margin-top: auto;
-    height: 80px;
+    height: fit-content;
     text-align: center;
     color: rgb(151, 151, 151);
 
@@ -98,7 +98,6 @@ a {
 }
 
 .nav:hover {
-
     color: #D4AF37;
 }
 
@@ -108,10 +107,6 @@ a {
 
 input[type="checkbox"], label {
     display: none;
-}
-
-#footer-content {
-    min-height: 60px;
 }
 
 #footer-content > p {
@@ -137,7 +132,124 @@ input[type="checkbox"], label {
     z-index: 0;
 }
 
+/*Home Page */
+
+.intro-box {
+    position: absolute;
+    top: 30%;
+    text-align: center;
+
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.intro-box > h1 {
+    width: 80%;
+    max-width: 600px;
+    align-self: center;
+    background-image: linear-gradient(to bottom right,#F4EAD1, #D4AF37);
+    color: transparent;
+    background-clip: text;
+    font-size: 50px;
+}
+
+.intro-box > h2 {
+    color: #F4EAD1;
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+.intro-box > button {
+    align-self: center;
+    width: fit-content;
+    padding: 8px 12px;
+    font-size: 24px;
+    font-family: "Norwester";
+    background-image: linear-gradient(to bottom right,#F4EAD1, #D4AF37);
+    border: none;
+    border-radius: 12px;
+    color: #274C77;
+}
+
+.intro-box > button:hover {
+    filter: brightness(120%);
+}
+
+.home-info {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 24px 0px;
+    width: 60%;
+    margin: 45px auto;
+    max-width: 400px;
+
+}
+.open-time, .address {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+
+
+
+.address > img {
+    width: 30px;
+    grid-column: 1;
+    grid-row: 1/-1;
+    margin-left: 16px;
+}
+
+.address > div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+    color: #F4EAD1;
+    margin-left: 4px;
+}
+
+
+
+
+.open-time > img {
+    width: 25px;
+    grid-column: 1;
+    grid-row: 1/-1;
+    margin-left: 18px
+}
+
+.open-time > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    margin-left: 10px;
+    padding-bottom: 6px;
+}
+
+.open-time > div > p {
+    color: #D4AF37
+}
+
+.open-time > div > span {
+    color: #F4EAD1;
+}
+
 /*Menu Page */
+
+.menu-div > h1 {
+    font-size: 40px;
+    text-align: center;
+    margin: 40px auto 20px auto;
+    color: #F4EAD1;
+    border-bottom: 3px solid #D4AF37;
+    padding-bottom: 6px;
+    width: fit-content;
+}
 
 .menu-div {
     display: grid;
@@ -150,7 +262,7 @@ input[type="checkbox"], label {
     background-color: #203147;
     width: 80%;
     border-radius: 16px;
-    margin: 60px auto;
+    margin: 20px auto;
     padding: 15px 40px 40px 40px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -158,14 +270,15 @@ input[type="checkbox"], label {
     place-items: center;
 }
 
-h2 {
+.menu-content > h2 {
     grid-column: 1/-1;
-    border-bottom: 2px solid #F4EAD1;
+    border-bottom: 2px solid #D4AF37;
     color: #F4EAD1;
+    padding-bottom: 2px;
     margin-bottom: 12px;
 }
 
-h3 {
+.menu-card > h3 {
     color: #151515;
 }
 
@@ -205,6 +318,42 @@ h3 {
     border-top: 2px dotted black;
     padding-top: 4px;
     color: #000000;
+}
+
+/* About Page */
+
+.about {
+    height: 100vh;
+    background-color: #151b29;
+}
+
+.about > h1 {
+    font-size: 40px;
+    text-align: center;
+    margin: 40px auto;
+    color: #F4EAD1;
+    border-bottom: 3px solid #D4AF37;
+    padding-bottom: 6px;
+    width: fit-content;
+}
+
+.about > div {
+    width: 70%;
+    max-width: 800px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-size: 22px;
+    background-color: #a8a190;
+    padding: 40px;
+    border-radius: 12px;
+    line-height: 1.4;
+    color: #201d1a;;
+}
+
+.about > div > p {
+    flex: 0 1 auto;
 }
 
 
@@ -255,5 +404,9 @@ h3 {
         display: block;
         width: 35px;
         align-self: center;
+    }
+
+    .about > div {
+        font-size: 110%;
     }
 }

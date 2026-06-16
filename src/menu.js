@@ -23,6 +23,7 @@ export { loadMenuPage }
 
 function loadMenuPage() {
     const menuDiv = document.createElement("div");
+    const menuTitle = document.createElement("h1");
     const mainsContent = document.createElement("div");
     const mainsTitle = document.createElement("h2");
     const sidesContent = document.createElement("div");
@@ -34,7 +35,8 @@ function loadMenuPage() {
 
     document.getElementById("content").appendChild(menuDiv);
     menuDiv.classList.add("menu-div");
-    menuDiv.append(mainsContent, sidesContent, dessertContent, drinksContent,);
+    menuTitle.textContent = "Menu";
+    menuDiv.append(menuTitle, mainsContent, sidesContent, dessertContent, drinksContent,);
 
     mainsContent.classList.add("mains-content", "menu-content");
     mainsContent.appendChild(mainsTitle);
